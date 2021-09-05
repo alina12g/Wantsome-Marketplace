@@ -1,4 +1,4 @@
-let carts = document.querySelectorAll(".add-cart");
+let addToCart = document.querySelectorAll(".add-cart");
 let products = [
   {
     name: "Fundita",
@@ -98,8 +98,8 @@ let products = [
   },
 ];
 
-for (let i = 0; i < carts.length; i++) {
-  carts[i].addEventListener("click", () => {
+for (let i = 0; i < addToCart.length; i++) {
+  addToCart[i].addEventListener("click", () => {
     cartNumbers(products[i]);
     totalCost(products[i]);
   });
