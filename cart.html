@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles-clothing.css" />
+    <link rel="stylesheet" href="head-and-foot.css"/>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <title>Marketplace | Wantsome Project</title>
+  </head>
+  <body>
+    <header>
+      <div class="overlay"></div>
+      <nav>
+        <nav>
+            <div class="left-nav">
+              <img
+                src="./images/logo-bebeland.png"
+                alt="bebe land logo"
+                class="logo"
+              />
+              <div class="icons">
+                <a href="login.html">
+                  <i class="fa fa-user"></i>
+                </a>
+                <a href="cart.html" class="cart">
+                    <ion-icon name="basket"></ion-icon>Cart<span>0</span>
+                  </a>
+                  <a href="#search" class="search">
+                    <input
+                      type="text"
+                      placeholder="Search..."
+                      class="search"
+                      action=""
+                      onsubmit="return false"
+                    />
+                    <i class="fa fa-search"></i>
+                  </a>
+                </div>
+              </div>
+      
+              <div class="right-nav">
+                <ul class="navigation">
+                  <li><a href="index.html">Acasă</a></li>
+                  <li>
+                    <a href="clothing.html">Haine</a>
+                    <span class="subnav">
+                      <a href="dress.html">Rochii</a>
+                      <a href="salopete.html">Body</a>
+                      <a href="accesorii.html">Accesorii</a>
+                    </span>
+                  </li>
+                  <li><a href="cont.html">Cont</a></li>
+                  <li><a href="contact.html">Contact</a></li>
+                </ul>
+              </div>
+            </nav>
+          </header>
+
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li class="cart">
+            <a href="cart.html">
+              <ion-icon name="basket"></ion-icon>Cart<span>0</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+</br></br></br>
+    <div class="container-products">
+      <div class="product-header">
+        <h5 class="product-title">PRODUCT</h5>
+        <h5 class="price sm-hide">PRICE</h5>
+        <h5 class="quantity">QUANTITY</h5>
+        <h5 class="total">TOTAL</h5>
+      </div>
+    </br>
+      <div class="products"></div>
+    </div>
+
+    <script src="script-accesorii.js"></script>
+    <script src="script-clothing.js"></script>
+    <script src="script-salopete.js"></script>
+    <script src="script-dress.js"></script>
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+  </body>
+</html>

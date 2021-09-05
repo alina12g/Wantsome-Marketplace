@@ -1,0 +1,118 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --dark-blue: #0b161e;
+  --medium-blue: #33658a;
+  --blue: #31299f;
+  --medium-graysh-blue: #2f4858;
+  --skye-blue: #86bbd8;
+  --yellow: #f6ae2d;
+  --orange: #f26419;
+  --white: #fff;
+}
+body {
+  font-family: "Varela Round", sans-serif;
+  font-size: 16px;
+  -webkit-font-smoothing: subpixel-antialiased;
+  overflow-x: hidden;
+  color: var(--dark-blue);
+  line-height: 1.8;
+  width: 1500px;
+  max-width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+/*NAV styling*/
+nav {
+  display: flex;
+  justify-content: space-between;
+  height: 90px;
+  margin: 0 auto;
+  width: 100vw;
+  background-color: var(--white);
+}
+ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  justify-content: space-between;
+  align-items: center;
+}
+ul li {
+  margin-right: 18px;
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  color: var(--dark-blue);
+  cursor: pointer;
+  font-weight: bolder;
+}
+ul li a:hover {
+  border-bottom: 2px solid var(--orange);
+  border-top: 2px solid var(--orange);
+  padding: 4px;
+}
+ul li a:active {
+  color: var(--blue);
+}
+input[type="text"] {
+  padding: 6px;
+  margin-top: 8px;
+  margin-right: 16px;
+  border: 0.1px solid var(--orange);
+  border-radius: 8px;
+  font-size: 17px;
+}
+.left-nav {
+  display: flex;
+  align-items: center;
+}
+.icons .fa {
+  margin-right: 18px;
+  color: var(--dark-blue);
+  cursor: pointer;
+  font-size: 22px;
+}
+.icons .fa:hover {
+  color: var(--orange);
+}
+.icons a {
+  text-decoration: none;
+}
+
+.right-nav {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  margin-right: 50px;
+}
+.logo {
+  width: 90px;
+  padding-right: 15px;
+}
+/*footer style*/
+footer {
+  text-align: center;
+  padding: 20px;
+}
+footer ul {
+  margin-left: 30px;
+  justify-content: center;
+  padding: 10px;
+  font-size: 15px;
+}
+footer ul li a {
+  color: var(--medium-blue);
+}
+footer p {
+  color: var(--medium-blue);
+  font-size: 13px;
+}
+.copyrights {
+  color: var(--orange);
+}

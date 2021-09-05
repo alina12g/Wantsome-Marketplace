@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round"
+    />
+
+    <title>Marketplace | Wantsome Project</title>
+  </head>
+  <body>
+    <nav>
+      <div class="left-nav">
+        <img
+          src="./images/logo-bebeland.png"
+          alt="bebe land logo"
+          class="logo"
+        />
+        <div class="icons">
+          <a href="login.html" >
+            <i class="fa fa-user"></i>
+          </a>
+          <a href="#cart" >
+            <i class="fa fa-shopping-cart"></i>
+          </a>
+          <a href="#search" class="search">
+            <input type="text" placeholder="Search..." class="search">
+             <i class="fa fa-search"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="right-nav">
+        <ul class="navigation">
+          <li><a href="index.html" >Acasă</a></li>
+          <li><a href="clothing.html" >Haine</a></li>
+          <li><a href="cont.html">Cont</a></li>
+          <li><a href="contact.html" >Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <section class="login-section">
+      <div>
+         <div class="header">
+        <h2>Creaza cont</h2>
+      </div>
+      <form class="form" method="GET">
+        <div class="form-control">
+          <label for="username">Username</label>
+          <input type="text" placeholder="username" class="username" />
+          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <small>Error message</small>
+        </div>
+        <div class="form-control">
+          <label for="username">Email</label>
+          <input type="email" placeholder="email @" class="email" />
+          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <small>Error message</small>
+        </div>
+        <div class="form-control">
+          <label for="username">Password</label>
+          <input type="password" placeholder="Password" class="password"/>
+          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <small>Error message</small>
+        </div>
+        <div class="form-control">
+          <label for="username">Password check</label>
+          <input type="password" placeholder="Re-enter password" class="password2"/>
+          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <small>Error message</small>
+        </div>
+        <button>Submit</button>
+      </form>
+      </div>
+     
+    </div>
+    </section>
+
+    <footer>
+      <div class="flex">
+        <img
+          src="./images/logo-bebeland.png"
+          alt="logo Bebe Land"
+          class="logo"
+        />
+        <ul>
+          <li><a href="gdpr.html" target="_blank">POLITICI GDPR</a></li>
+          <li>
+            <a href="cookies.html" target="_blank">POLITICA DE COOKIES</a>
+          </li>
+          <li><a href="retur.html" target="_blank">INFORMATII RETUR</a></li>
+          <li><a href="terms.html" target="_blank">TERMENI SI CONDITII</a></li>
+          <li><a href="anpc.html" target="_blank">ANPC</a></li>
+          <li><a href="contact.html" target="_blank">CONTACT</a></li>
+        </ul>
+      </div>
+
+      <p>
+        Copyright &copy;
+        <a
+          href="https://www.github.com/alina12g"
+          class="copyrights"
+          target="_blank"
+          >Alina Negru</a
+        >
+        2021
+      </p>
+    </footer>
+    
+    <script>
+      const form = document.getElementsByClassName('form');
+      const username = document.getElementsByClassName('username');
+      const email = document.getElementsByClassName('email');
+      const password = document.getElementsByClassName('password');
+      const password2 = document.getElementsByClassName('password2');
+
+      form.addEventListener('submit', e => {
+	      e.preventDefault();
+	
+	      checkInputs();
+    });
+
+function checkInputs() {
+	const usernameValue = username.value.trim();
+	const emailValue = email.value.trim();
+	const passwordValue = password.value.trim();
+	const password2Value = password2.value.trim();
+	
+	if(usernameValue === ' ') {
+		setErrorFor(username, 'Username cannot be blank');
+	} else {
+		setSuccessFor(username);
+	}
+	
+	if(emailValue === ' ') {
+		setErrorFor(email, 'Email cannot be blank');
+	} else if (!isEmail(emailValue)) {
+		setErrorFor(email, 'Not a valid email');
+	} else {
+		setSuccessFor(email);
+	}
+	
+	if(passwordValue === ' ') {
+		setErrorFor(password, 'Password cannot be blank');
+	} else {
+		setSuccessFor(password);
+	}
+	
+	if(password2Value === ' ') {
+		setErrorFor(password2, 'Password2 cannot be blank');
+	} else if(passwordValue !== password2Value) {
+		setErrorFor(password2, 'Passwords does not match');
+	} else{
+		setSuccessFor(password2);
+	}
+}
+
+function setErrorFor(input, message) {
+	const formControl = input.parentElement;
+	const small = formControl.querySelector('small');
+	formControl.className = 'form-control error';
+	small.innerText = message;
+}
+
+function setSuccessFor(input) {
+	const formControl = input.parentElement;
+	formControl.className = 'form-control success';
+}
+	
+function isEmail(email) {
+	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+}
+    </script>
+  </body>
+</html>

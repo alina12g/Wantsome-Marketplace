@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles-clothing.css" />
+    <link rel="stylesheet" href="head-and-foot.css"/>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <title>Marketplace | Wantsome Project</title>
+  </head>
+  <body>
+    <header>
+      <div class="overlay"></div>
+      <nav>
+        <div class="left-nav">
+          <img
+            src="./images/logo-bebeland.png"
+            alt="bebe land logo"
+            class="logo"
+          />
+          <div class="icons">
+            <a href="login.html">
+              <i class="fa fa-user"></i>
+            </a>
+            <!-- <a href="#cart">
+              <i class="fa fa-shopping-cart cart" name="basket"></i>Cart<span
+                >0</span
+              >
+            </a>-->
+            <a href="cart.html" class="cart">
+              <ion-icon name="basket"></ion-icon>Cart<span>0</span>
+            </a>
+            <a href="#search" class="search">
+              <input type="text" placeholder="Search..." class="search" />
+              <i class="fa fa-search"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="right-nav">
+          <ul class="navigation">
+            <li><a href="index.html">Acasă</a></li>
+            <li><a href="clothing.html">Haine</a>
+              <span class="subnav">
+                <a href="dress.html">Rochii</a>
+                <a href="salopete.html">Body</a>
+                <a href="accesorii.html">Accesorii</a>
+              </span></li>
+              <li><a href="cont.html">Cont</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <div class="contain top">
+      <div id="buttons">
+        <button class="btn" onclick="filterObjects('all')">Show all</button>
+        <button class="btn" onclick="filterObjects('6months')">6 months</button>
+        <button class="btn" onclick="filterObjects('12months')">12 months</button>
+        <button class="btn" onclick="filterObjects('16months')">16 months</button>
+        <button class="btn" onclick="filterObjects('24months')">24 months</button>
+        <button class="btn" onclick="filterObjects('32months')">32 months</button>
+      </div>
+    </br>
+    </div>
+    <div class="contain objects">
+      <div class="image 12months 16months 24months 32months">
+        <img src="./img-dress/imag1.jpeg" alt="kids fashion" />
+        <h5>Rochie</h5>
+        <h5>100 RON</h5>
+        <a class="add-cart cart1" href="#">Add Cart</a>
+        <input type="hidden" value="100" />
+      </div>
+      <div class="image 6months 12months 16months">
+        <img src="./img-dress/imag2.jpeg" alt="kids fashion"/>
+        <h5>Rochie</h5>
+        <h5>90 RON</h5>
+        <a class="add-cart cart2" href="#">Add Cart</a>
+        <input type="hidden" value="90" />
+      </div>
+      <div class="image 24months 32months">
+        <img src="./img-dress/imag3.jpeg"alt="kids fashion" />
+        <h5>Rochie</h5>
+        <h5>90 RON</h5>
+        <a class="add-cart cart3" href="#">Add Cart</a>
+        <input type="hidden" value="90" />
+      </div>
+      <div class="image 6months 12months 16months 24months 32months">
+        <img src="./img-dress/imag4.jpeg"alt="kids fashion" />
+        <h5>Rochie cu nasturi</h5>
+        <h5>100 RON</h5>
+        <a class="add-cart cart4" href="#">Add Cart</a>
+        <input type="hidden" value="100" />
+      </div>
+      <div class="image 12months 16months">
+        <img src="./img-dress/imag5.jpeg" alt="kids fashion"/>
+        <h5>Rochie</h5>
+        <h5>90 RON</h5>
+        <a class="add-cart cart5" href="#">Add Cart</a>
+        <input type="hidden" value="90" />
+      </div>
+      <div class="image 24months 32months">
+        <img src="./img-dress/imag6.jpeg" alt="kids fashion"/>
+        <h5>Rochie</h5>
+        <h5>80 RON</h5>
+        <a class="add-cart cart6" href="#">Add Cart</a>
+        <input type="hidden" value="80" />
+      </div>
+      <div class="image 12months 16months 24months ">
+        <img src="./img-dress/imag7.jpeg" alt="kids fashion"/>
+        <h5>Rochie</h5>
+        <h5>100 RON</h5>
+        <a class="add-cart cart7" href="#">Add Cart</a>
+        <input type="hidden" value="100" />
+      </div>
+      <div class="image 16months 24months 32months">
+        <img src="./img-dress/imag8.jpeg" alt="kids fashion"/>
+        <h5>Rochie</h5>
+        <h5>80 RON</h5>
+        <a class="add-cart cart8" href="#">Add Cart</a>
+        <input type="hidden" value="80" />
+      </div>
+      <div class="image 6months 12months 16months  32months">
+        <img src="./img-dress/imag9.jpeg" alt="kids fashion"/>
+        <h5>Rochie cu accesoriu</h5>
+        <h5>100 RON</h5>
+        <a class="add-cart cart9" href="#">Add Cart</a>
+        <input type="hidden" value="100" />
+      </div>
+      <div class="image 6months 12months">
+        <img src="./img-dress/imag10.jpeg" alt="kids fashion"/>
+        <h5>Rochie cu accesoriu</h5>
+        <h5>120RON</h5>
+        <a class="add-cart cart10" href="#">Add Cart</a>
+        <input type="hidden" value="120" />
+      </div>
+      <div class="image 16months 24months ">
+        <img src="./img-dress/imag11.jpeg" alt="kids fashion" />
+        <h5>Rochie</h5>
+        <h5>70 RON</h5>
+        <a class="add-cart cart11" href="#">Add Cart</a>
+        <input type="hidden" value="70" />
+      </div>
+      <div class="image 6months 12months 16months 24months 32months">
+        <img src="./img-dress/imag12.jpeg" alt="kids fashion"/>
+        <h5>Rochie cu acesoriu</h5>
+        <h5>120 RON</h5>
+        <a class="add-cart cart12" href="#">Add Cart</a>
+        <input type="hidden" value="120" />
+      </div>
+      <div class="image 32months">
+        <img src="./img-dress/imag13.jpeg"alt="kids fashion" />
+        <h5>Rochie cu accesorii<h/5>
+        <h5>150 RON</h5>
+        <a class="add-cart cart13" href="#">Add Cart</a>
+        <input type="hidden" value="150" />
+      </div>
+      <div class="image 6months 12months 16months ">
+        <img src="./img-dress/imag14.jpeg" alt="kids fashion" />
+        <h5>Rochie</h5>
+        <h5>80 RON</h5>
+        <a class="add-cart cart14" href="#">Add Cart</a>
+        <input type="hidden" value="80" />
+      </div>
+      <div class="image 6months 16months ">
+        <img src="./img-dress/imag15.jpeg"alt="kids fashion" />
+        <h5>Rochie</h5>
+        <h5>90 RON</h5>
+        <a class="add-cart cart15" href="#">Add Cart</a>
+        <input type="hidden" value="90" />
+      </div>
+      <div class="image 6months 12months 16months 24months 32months">
+        <img src="./img-dress/imag16.jpeg"  alt="kids fashion"/>
+        <h5>Fusta</h5>
+        <h5>50 RON</h5>
+        <a class="add-cart cart16" href="#">Add Cart</a>
+        <input type="hidden" value="50" />
+      </div>
+    </div>
+
+<!--
+    <div class="products-container">
+      <div class="product-header">
+        <h5 class="product-title">Product</h5>
+        <h5 class="price">Price</h5>
+        <h5 class="quantity">Quantity</h5>
+        <h5 class="total">Total</h5>
+      </div>
+
+      <div class="products"></div>-->
+    </div>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="script-dress.js"></script>
+    <script src="filter.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
