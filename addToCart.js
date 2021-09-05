@@ -483,7 +483,6 @@ function onLoadCartNumbers() {
 function cartNumbers(product, action) {
   let productNumbers = localStorage.getItem("cartNumbers");
   productNumbers = parseInt(productNumbers);
-
   let cartItems = localStorage.getItem("productsInCart");
   cartItems = JSON.parse(cartItems);
 
@@ -509,7 +508,6 @@ function setItems(product) {
 
   if (cartItems != null) {
     let currentProduct = product.tag;
-
     if (cartItems[currentProduct] == undefined) {
       cartItems = {
         ...cartItems,
@@ -523,7 +521,6 @@ function setItems(product) {
       [product.tag]: product,
     };
   }
-
   localStorage.setItem("productsInCart", JSON.stringify(cartItems));
 }
 
@@ -541,28 +538,24 @@ function totalCost(product, action) {
     localStorage.setItem("totalCost", product.price);
   }
 }
-
 function displayCart() {
   let cartItems = localStorage.getItem("productsInCart");
   cartItems = JSON.parse(cartItems);
-
   let cart = localStorage.getItem("totalCost");
   cart = parseInt(cart);
-
   let productContainer = document.querySelector(".products");
-
   if (cartItems && productContainer) {
     productContainer.innerHTML = "";
     Object.values(cartItems).map((item, index) => {
       productContainer.innerHTML += `
       <div class="product">
         <ion-icon name="close-circle"></ion-icon> 
-       <img src="./img-clothing/${item.tag}.jpeg"/>
+       <img src="./images/${item.tag}.jpeg"/>
       <span class="sm-hide">${item.name}</span>
     </div>
     <div class="price sm-hide">${item.price}</div>
     <div class="quantity">
-                <ion-icon class="decrease " name="arrow-dropleft-circle"></ion-icon>
+                <ion-icon class="decrease" name="arrow-dropleft-circle"></ion-icon>
                     <span>${item.inCart}</span>
                 <ion-icon class="increase" name="arrow-dropright-circle"></ion-icon>   
             </div>
@@ -570,18 +563,63 @@ function displayCart() {
       ${item.inCart * item.price}
   </div> `;
     });
-
     productContainer.innerHTML += `
             <div class="basketTotalContainer">
                 <h4 class="basketTotalTitle">Basket Total</h4>
-                <h4 class="basketTotal">${cart},</h4>
+                <h4 class="basketTotal">${cart}</h4>
             </div>`;
 
     deleteButtons();
     manageQuantity();
   }
 }
+/* function manageQuantity() {
+  let decreaseButtons = document.querySelectorAll(".decrease");
+  let increaseButtons = document.querySelectorAll(".increase");
+  let currentQuantity = 0;
+  let currentProduct = "";
+  let cartItems = localStorage.getItem("productsInCart");
+  cartItems = JSON.parse(cartItems);
 
+  for (let i = 0; i < increaseButtons.length; i++) {
+    decreaseButtons[i].addEventListener("click", () => {
+      currentQuantity =
+        decreaseButtons[i].parentElement.querySelector("span").textContent;
+      currentProduct = decreaseButtons[
+        i
+      ].parentElement.previousElementSibling.previousElementSibling
+        .querySelector("span")
+        .textContent.toLocaleLowerCase()
+        .replace(/ /g, "")
+        .trim();
+      if (cartItems[currentProduct].inCart > 1) {
+        cartItems[currentProduct].inCart -= 1;
+        cartNumbers(cartItems[currentProduct], "decrease");
+        totalCost(cartItems[currentProduct], "decrease");
+        localStorage.setItem("productsInCart", JSON.stringify(cartItems));
+        displayCart();
+      }
+    });
+
+    increaseButtons[i].addEventListener("click", () => {
+      currentQuantity =
+        increaseButtons[i].parentElement.querySelector("span").textContent;
+      console.log(currentQuantity);
+      currentProduct = increaseButtons[
+        i
+      ].parentElement.previousElementSibling.previousElementSibling
+        .querySelector("span")
+        .textContent.toLocaleLowerCase()
+        .replace(/ /g, "")
+        .trim();
+      cartItems[currentProduct].inCart += 1;
+      cartNumbers(cartItems[currentProduct]);
+      totalCost(cartItems[currentProduct]);
+      localStorage.setItem("productsInCart", JSON.stringify(cartItems));
+      displayCart();
+    });
+  }
+} */
 function manageQuantity() {
   let decreaseButtons = document.querySelectorAll(".decrease");
   let increaseButtons = document.querySelectorAll(".increase");

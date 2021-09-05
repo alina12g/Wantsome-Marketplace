@@ -73,6 +73,7 @@ ion-icon {
   font-size: 28px;
   padding-right: 10px;
   transform: translateY(5px);
+  cursor: pointer;
 }
 .cart ion-icon {
   cursor: pointer;
@@ -146,7 +147,8 @@ h5 {
   text-decoration: none;
 }
 /*cart page*/
-.products-container {
+.products-container,
+.container-products {
   max-width: 650px;
   justify-content: space-around;
   margin: 0 auto;
@@ -184,6 +186,7 @@ h5 {
   border-bottom: 1px solid lightgray;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .price {
   width: 15%;
@@ -192,7 +195,7 @@ h5 {
   width: 30%;
 }
 .quantity span {
-  padding: 10px;
+  padding: 10px 12px;
 }
 .total {
   width: 10%;
@@ -208,10 +211,10 @@ h5 {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  padding-top: 30px;
+  padding-top: 70px;
 }
 .products img {
-  width: 75px;
+  width: 55px;
 }
 .basketTotalContainer {
   display: flex;
