@@ -188,6 +188,7 @@ let products = [
     price: 80,
     inCart: 0,
   },
+  //img dress
   {
     name: "Rochie",
     tag: "imgDress1",
@@ -284,6 +285,7 @@ let products = [
     price: 50,
     inCart: 0,
   },
+  //img body and salopete
   {
     name: "Salopeta",
     tag: "imgSalopete1",
@@ -475,7 +477,7 @@ function displayCart() {
     });
     productContainer.innerHTML += `
             <div class="basketTotalContainer">
-                <h4 class="basketTotalTitle">Basket Total</h4>
+                <h4 class="basketTotalTitle">Cost Total</h4>
                 <h4 class="basketTotal">${cart}</h4>
             </div>`;
 
