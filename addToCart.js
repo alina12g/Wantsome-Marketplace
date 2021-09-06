@@ -394,7 +394,7 @@ function onLoadCartNumbers() {
 
 function cartNumbers(product, action) {
   let productNumbers = localStorage.getItem("cartNumbers");
-  productNumbers = parseInt(productNumbers);
+  productNumbers = parseInt(productNumbers); // from string to number
   let cartItems = localStorage.getItem("productsInCart");
   cartItems = JSON.parse(cartItems);
 
@@ -460,7 +460,7 @@ function displayCart() {
     productContainer.innerHTML = "";
     Object.values(cartItems).map((item, index) => {
       productContainer.innerHTML += `
-      <div class="product">
+      <div class="product"  id=${item.tag}>
         <ion-icon name="close-circle"></ion-icon> 
        <img src="./images/${item.tag}.jpeg"/>
       <span class="sm-hide">${item.name}</span>
@@ -536,7 +536,7 @@ function manageQuantity() {
   let decreaseButtons = document.querySelectorAll(".decrease");
   let increaseButtons = document.querySelectorAll(".increase");
   let currentQuantity = 0;
-  let currentProduct = "";
+  let currentProduct = " ";
   let cartItems = localStorage.getItem("productsInCart");
   cartItems = JSON.parse(cartItems);
 
@@ -546,14 +546,12 @@ function manageQuantity() {
       currentQuantity =
         decreaseButtons[i].parentElement.querySelector("span").textContent;
       console.log(currentQuantity);
-      currentProduct = decreaseButtons[
-        i
-      ].parentElement.previousElementSibling.previousElementSibling
-        .querySelector("span")
-        .textContent.toLocaleLowerCase()
-        .replace(/ /g, "")
-        .trim();
-      console.log(currentProduct);
+      currentProduct =
+        decreaseButtons[
+          i
+        ].parentElement.previousElementSibling.previousElementSibling.querySelector(
+          "span"
+        ).parentElement.id;
 
       if (cartItems[currentProduct].inCart > 1) {
         cartItems[currentProduct].inCart -= 1;
@@ -569,14 +567,12 @@ function manageQuantity() {
       currentQuantity =
         increaseButtons[i].parentElement.querySelector("span").textContent;
       console.log(currentQuantity);
-      currentProduct = increaseButtons[
-        i
-      ].parentElement.previousElementSibling.previousElementSibling
-        .querySelector("span")
-        .textContent.toLocaleLowerCase()
-        .replace(/ /g, "")
-        .trim();
-      console.log(currentProduct);
+      currentProduct =
+        increaseButtons[
+          i
+        ].parentElement.previousElementSibling.previousElementSibling.querySelector(
+          "span"
+        ).parentElement.id;
 
       cartItems[currentProduct].inCart += 1;
       cartNumbers(cartItems[currentProduct]);
@@ -598,11 +594,7 @@ function deleteButtons() {
 
   for (let i = 0; i < deleteButtons.length; i++) {
     deleteButtons[i].addEventListener("click", () => {
-      productName = deleteButtons[i].parentElement.textContent
-        .toLocaleLowerCase()
-        .replace(/ /g, "")
-        .trim();
-
+      productName = deleteButtons[i].parentElement.id;
       localStorage.setItem(
         "cartNumbers",
         productNumbers - cartItems[productName].inCart
